@@ -6,8 +6,8 @@ YouTube: youtube.com/BoraParaPratica
 Linkedin: https://www.linkedin.com/in/robson-vaamonde-0b029028/
 Instagram: https://www.instagram.com/procedimentoem/?hl=pt-br
 Github: https://github.com/vaamonde
-Data de criação: 02/05/2022
-Data de atualização: 02/05/2022
+Data de criação: 20/02/2024
+Data de atualização: 20/02/2024
 Versão: 0.01
 Testado e homologado para a versão do Ubuntu Server 22.04.x LTS x64
 Comando para verificar todas as versões dos scripts: grep 'Versão:' *.sh
@@ -17,4 +17,4 @@ Comando para verificar todas as datas de atualização dos scripts: grep 'Data d
     grep 'Data de atualização:' *.sh | cut -d '#' -f2 > /tmp/03.txt
     paste /tmp/01.txt /tmp/02.txt /tmp/03.txt >> ../RELEASE
 
-============================ LANÇAMENTO DAS VERSÕES DOS SCRIPTS ============================
+============================ LANÇAMENTO DAS VERSÕES DOS VÍDEOS ============================

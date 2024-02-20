@@ -1,4 +1,4 @@
-# Curso GRÁTIS de de Inventário Open Source utilizando OCS Inventory NG, FusionInventory e GLPI Help Desk utilizando o GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish).
+# Curso GRÁTIS de Inventário Open Source utilizando as soluções: OCS Inventory NG, FusionInventory e GLPI Help Desk, instalado e configurado no GNU/Linux Ubuntu Server 22.04.x LTS (Jammy Jellyfish).
 
 ## 💰 Ajude o projeto Bora para Prática a continuar fazendo vídeos e materiais gratuitos para o Canal do YouTUBE
 ## 💰 Chave PIX do projeto: robsonvaamonde@gmail.com
