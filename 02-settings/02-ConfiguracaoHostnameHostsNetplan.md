@@ -56,7 +56,7 @@ localizado em /etc/hosts
 		#OBSERVAÇÃO IMPORTANTE: ALTERAR O NOME DO DOMÍNIO E APELIDO PARA O SEU CENÁRIO
 		127.0.0.1    localhost.localdomain    localhost
 		127.0.1.1    ocsinventory.pti.intra   ocsinventory
-		172.16.1.50  ocsinventory.pti.intra   ocsinventory
+		172.16.1.30  ocsinventory.pti.intra   ocsinventory
 	
 	#salvar e sair do arquivo
 	ESC SHIFT : x <Enter>
@@ -121,7 +121,7 @@ localizado em /etc/hosts
         dhcp4: false
         #alterar o endereço IPv4 para o seu cenário
         #OBSERVAÇÃO: configuração do Endereço IPv4 dentro de Colchetes
-        addresses: [172.16.1.50/24]
+        addresses: [172.16.1.30/24]
         #alterar o gateway padrão para o seu cenário
         #gateway4: 172.16.1.254
         #OBSERVAÇÃO IMPORTANTE: a opção de Gateway4 foi descontinuada, recomendo
@@ -136,7 +136,7 @@ localizado em /etc/hosts
           #alterar a pesquisa de domínio para o seu cenário
           #OBSERVAÇÃO: configuração da pesquisa de Domínio dentro de Colchetes
           search: [pti.intra]
-    version: 2
+      version: 2
 
 	#salvar e sair do arquivo
 	ESC SHIFT : x <Enter>
@@ -162,6 +162,34 @@ localizado em /etc/hosts
 	#verificando as informações dos Servidores DNS e Pesquisa de Domínio
 	sudo resolvectl
 
+#08_ Desativando o suporte ao IPv6 no Ubuntu Server<br>
+
+	#OBSERVAÇÃO IMPORTANTE: para esse cenário não será utilizado o suporte ao
+	#IPv6 no Servidor Ubuntu, caso seja necessário recomendo ver a documentação
+	#referente ao IPv6 do Netplan.
+
+	#editando o arquivo de configuração do Sysctl
+	#opção do comando vim: + (For the first file the cursor will be positioned on line)
+	sudo vim /etc/sysctl.conf +
+	INSERT
+
+		#adicionar o suporte para desabilitar o IPv6 no final do arquivo
+		net.ipv6.conf.all.disable_ipv6=1
+		net.ipv6.conf.default.disable_ipv6=1
+		net.ipv6.conf.lo.disable_ipv6 = 1
+
+	#salvar e sair do arquivo
+	ESC SHIFT : x <Enter>
+
+	#aplicando as alterações no sistema
+	#opção do comando sysctl: -p (Load in sysctl settings from the file /etc/sysctl.conf)
+	sudo sysctl -p
+
+	#verificando se o IPv6 foi desativado no Ubuntu Server (valor 1 = Desativado)
+	sudo cat /proc/sys/net/ipv6/conf/all/disable_ipv6
+
+#09 Testando a conexão com a Internet utilizando somente o IPv4<br>
+
 	#testando a conexão com a Internet
 	ping 8.8.8.8
 	ping google.com
@@ -173,7 +201,7 @@ localizado em /etc/hosts
 	sudo hostname -d
 	sudo hostname -i
 
-#08_ Acessando a máquina virtual do Ubuntu Server remotamente via SSH<br>
+#10_ Acessando a máquina virtual do Ubuntu Server remotamente via SSH<br>
 
 	#OBSERVAÇÃO: após a configuração da Placa de Rede do Ubuntu Server você já pode
 	#acessar remotamente o seu servidor utilizando o Protocolo SSH nos clientes Linux
@@ -181,10 +209,10 @@ localizado em /etc/hosts
 	#fácil administrar e configurar os principais serviços de rede e forma remota.
 
 	#testando a conexão com o Ubuntu Server
-	ping 172.16.1.50
+	ping 172.16.1.30
 
 	#acessando remotamente o Ubuntu Server
-	ssh vaamonde@172.16.1.50
+	ssh vaamonde@172.16.1.30
 
 	#confirmando a troca das chaves públicas e do fingerprint do SSH
 	Yes <Enter>
