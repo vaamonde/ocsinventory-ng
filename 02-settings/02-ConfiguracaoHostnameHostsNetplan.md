@@ -118,6 +118,8 @@ localizado em /etc/hosts
     network:
       ethernets:
         enp0s3:
+        #desativar o IPv6
+        link-local: [ ipv4 ]
         dhcp4: false
         #alterar o endereço IPv4 para o seu cenário
         #OBSERVAÇÃO: configuração do Endereço IPv4 dentro de Colchetes
