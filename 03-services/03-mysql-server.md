@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 20/02/2024<br>
-#Data de atualização: 20/02/2024<br>
-#Versão: 0.01<br>
+#Data de atualização: 25/02/2024<br>
+#Versão: 0.02<br>
 
 Site Oficial do MySQL: https://www.mysql.com/<br>
 Site Oficial do MariaDB: https://mariadb.org/<br>
@@ -166,7 +166,7 @@ da Oracle Corporation, com mais de 10 milhões de instalações pelo mundo.
 		Connection Name: ocsinventory
 		Connection Method: Standard (TCP/IP)
 		Parameters:
-			Hostname: 172.16.1.50 (alterar o endereço IPv4 do seu servidor)
+			Hostname: 172.16.1.30 (alterar o endereço IPv4 do seu servidor)
 			Port: 3306
 			Username: root
 			Password:

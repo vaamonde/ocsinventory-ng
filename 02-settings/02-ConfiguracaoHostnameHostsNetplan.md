@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 20/02/2024<br>
-#Data de atualização: 20/02/2024<br>
-#Versão: 0.01<br>
+#Data de atualização: 25/02/2024<br>
+#Versão: 0.02<br>
 
 Release Notes Ubuntu Server 22.04.x: https://discourse.ubuntu.com/t/jammy-jellyfish-release-notes/24668<br>
 Ubuntu Advantage for Infrastructure: https://ubuntu.com/advantage<br>
@@ -117,27 +117,30 @@ localizado em /etc/hosts
 
     network:
       ethernets:
+        #configuração da placa de rede cabeada
         enp0s3:
-        #desativar o IPv6
-        link-local: [ ipv4 ]
-        dhcp4: false
-        #alterar o endereço IPv4 para o seu cenário
-        #OBSERVAÇÃO: configuração do Endereço IPv4 dentro de Colchetes
-        addresses: [172.16.1.30/24]
-        #alterar o gateway padrão para o seu cenário
-        #gateway4: 172.16.1.254
-        #OBSERVAÇÃO IMPORTANTE: a opção de Gateway4 foi descontinuada, recomendo
-        #utilizar as opções de Routes do Netplan para configurar o Gateway padrão
-        routes:
-          - to: default
-            via: 172.16.1.254
-        nameservers:
-          #alterar os servidores DNS para o seu cenário
-          #OBSERVAÇÃO: configuração do Endereço IPv4 dentro de Colchetes
-          addresses: [172.16.1.254]
-          #alterar a pesquisa de domínio para o seu cenário
-          #OBSERVAÇÃO: configuração da pesquisa de Domínio dentro de Colchetes
-          search: [pti.intra]
+          #desativando o suporte ao protocolo IPv6 na interface
+          link-local: []
+          #desativando o DHCP Client na interface
+          dhcp4: false
+          #configurando o endereço IPv4 para o seu cenário
+          #OBSERVAÇÃO IMPORTANTE: configuração do Endereço IPv4 dentro de Colchetes
+          addresses: [172.16.1.30/24]
+          #configurando o gateway padrão para o seu cenário
+          #OBSERVAÇÃO IMPORTANTE: a opção de Gateway4 foi descontinuada, recomendo
+          #utilizar as opções de Routes do Netplan para configurar o Gateway padrão
+          #gateway4: 172.16.1.254
+          routes:
+            - to: default
+              via: 172.16.1.254
+          #configuração dos servidores de DNS para o seu cenário
+          nameservers:
+            #configurar os servidores DNS para o seu cenário
+            #OBSERVAÇÃO: configuração do Endereço IPv4 dentro de Colchetes
+            addresses: [172.16.1.254]
+            #configurar a pesquisa de domínio para o seu cenário
+            #OBSERVAÇÃO: configuração da pesquisa de Domínio dentro de Colchetes
+            search: [pti.intra]
       version: 2
 
 	#salvar e sair do arquivo
@@ -149,7 +152,7 @@ localizado em /etc/hosts
 	sudo netplan --debug apply
 
 	#OBSERVAÇÃO IMPORTANTE: você pode utilizar a opção: try que caso aconteça alguma
-	#falha na hora de configurar a placa de rede ele reverte a configuração
+	#falha na hora de configurar a placa de rede ele reverte a configuração anterior
 	sudo netplan --debug try
 
 	#verificando o endereço IPv4 da Interface de Rede
@@ -166,11 +169,13 @@ localizado em /etc/hosts
 
 #08_ Desativando o suporte ao IPv6 no Ubuntu Server<br>
 
-	#OBSERVAÇÃO IMPORTANTE: para esse cenário não será utilizado o suporte ao
-	#IPv6 no Servidor Ubuntu, caso seja necessário recomendo ver a documentação
-	#referente ao IPv6 do Netplan.
+	#OBSERVAÇÃO IMPORTANTE: para esse cenário não será utilizado o suporte ao IPv6 no 
+	#Servidor Ubuntu, caso seja necessário recomendo ver a documentação referente ao 
+	#IPv6 do Netplan. UTILIZAR SOMENTE O RECURSO DE DESATIVAR O IPv6 NO UBUNTU SERVER
+	#EDITANDO O ARQUIVO: /etc/sysctl.conf SOMENTE SE A OPÇÃO DO: link-local: [] NO
+	#ARQUIVO: /etc/netplan/00-installer-config.yaml NÃO FUNCIONAR DE FORMA CORRETA.
 
-	#editando o arquivo de configuração do Sysctl
+	#editando o arquivo de configuração do sysctl.conf
 	#opção do comando vim: + (For the first file the cursor will be positioned on line)
 	sudo vim /etc/sysctl.conf +
 	INSERT

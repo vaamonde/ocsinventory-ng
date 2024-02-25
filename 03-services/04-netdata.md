@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 20/02/2024<br>
-#Data de atualização: 20/02/2024<br>
-#Versão: 0.01<br>
+#Data de atualização: 25/02/2024<br>
+#Versão: 0.02<br>
 
 Site Oficial do Netdata: https://www.netdata.cloud/<br>
 
@@ -161,7 +161,7 @@ exibi-las em gráficos ao vivo e fáceis de interpretar.
 
 	  - name: ocsinventory 
 		hosts:
-		- 172.16.1.50
+		- 172.16.1.30
 
 	#salvar e sair do arquivo
 	Ctrl + X
@@ -175,7 +175,7 @@ exibi-las em gráficos ao vivo e fáceis de interpretar.
 	#editar as informações a partir da linha: 8
 	jobs:
 	  - name: ocsinventory
-	    host: 172.16.1.50
+	    host: 172.16.1.30
 	    ports: [22, 80, 443, 3306, 19999]
 
 	#salvar e sair do arquivo
@@ -205,7 +205,7 @@ exibi-las em gráficos ao vivo e fáceis de interpretar.
 	#opção do comando grep: -i (ignore-case)
 	#opção do comando cat: -n (number line)
 	#opção do redirecionador |: Conecta a saída padrão com a entrada padrão de outro comando
-	sudo nmap -p- 172.16.1.50 -sS -sU | grep -i open | cat -n
+	sudo nmap -p- 172.16.1.30 -sS -sU | grep -i open | cat -n
 
 	#verificando todas as portas de serviços no Ubuntu Server
 	#opção do comando lsof: -n (network number), -P (port number), -i (list IP Address), -s (alone directs)
