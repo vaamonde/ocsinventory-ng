@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 20/02/2024<br>
-#Data de atualização: 20/02/2024<br>
-#Versão: 0.01<br>
+#Data de atualização: 26/02/2024<br>
+#Versão: 0.02<br>
 
 Release Notes Ubuntu Server 22.04.x: https://discourse.ubuntu.com/t/jammy-jellyfish-release-notes/24668<br>
 Ubuntu Advantage for Infrastructure: https://ubuntu.com/advantage<br>
@@ -18,6 +18,20 @@ Releases All Ubuntu Server: https://wiki.ubuntu.com/Releases
 Apt-Get ou Apt A ferramenta de pacote avançada, é uma interface de usuário de software<br>
 livre que funciona com bibliotecas centrais para lidar com a instalação e remoção de<br>
 software no Debian e em distribuições Linux baseadas nele.
+
+#00_ Adicionando os Repositórios Extras do Ubuntu Server<br>
+
+	#add-apt-repository Adiciona um repositório em /etc/apt/sources.list ou /etc/apt/sources.list.d
+	#ou remove um existente
+
+	#Adicionando o Repositório Universal
+	add-apt-repository universe
+
+	#Adicionando o Repositório Multiversão
+	add-apt-repository multiverse
+
+	#Adicionando o Repositório Restrito
+	add-apt-repository restricted
 
 #01_ Atualizando as Listas sources.list do Apt ou Apt-Get no Ubuntu Server<br>
 
