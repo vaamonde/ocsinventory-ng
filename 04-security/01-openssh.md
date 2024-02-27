@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 05/02/2024<br>
-#Versão: 0.07<br>
+#Data de atualização: 27/02/2024<br>
+#Versão: 0.08<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -131,7 +131,7 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		# alterar as informações na linha 17
 		# mais informações veja o arquivo Hosts.Deny no Github:
 		# opção do comando date: -u (universal)
-		ALL: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-deny.log
+		ALL: ALL: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/hosts-deny.log
 
 	#salvar e sair do arquivo
 	ESC SHIFT :x <Enter>
@@ -143,7 +143,7 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 		# OBSERVAÇÃO: ALTERAR A REDE CONFORME A SUA NECESSIDADE
 		# mais informações veja o arquivo Hosts.Allow no Github:
 		# opção do comando date: -u (universal)
-		sshd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/tcpwrappers-allow-ssh.log
+		sshd: 172.16.1.0/24: spawn /bin/echo "$(date -u) | Serviço Remoto %d | Host Remoto %c | Porta Remota %r | Processo Local %p" >> /var/log/hosts-allow.log
 
 	#salvar e sair do arquivo
 	ESC SHIFT :x <Enter>
@@ -161,5 +161,5 @@ de protocolo de Internet em sistemas operacionais do tipo Unix, como Linux ou BS
 	#verificando os Log's de acesso ao servidor
 	sudo cat /var/log/auth.log | grep ssh
 	sudo cat /var/log/syslog | grep ssh
-	sudo cat /var/log/tcpwrappers-deny.log
-	sudo cat /var/log/tcpwrappers-allow-ssh.log
+	sudo cat /var/log/hosts-deny.log
+	sudo cat /var/log/hosts-allow.log

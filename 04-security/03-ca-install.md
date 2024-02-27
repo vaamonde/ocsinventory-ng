@@ -40,6 +40,11 @@ aplicativos como navegação na web, email, mensagens instantâneas e voz sobre 
 Os sites podem usar o TLS para proteger todas as comunicações entre seus servidores e<br>
 navegadores web.
 
+#00_ Download da Autoridade Certificadora CA via Navegador<br>
+
+	#utilizar os navegadores para testar suas páginas
+	firefox ou google chrome: http://endereço_ipv4_ubuntuserver/ca
+
 #01_ Instalação da Autoridade Certificadora CA no Mozilla Firefox (GNU/Linux ou Microsoft Windows)<br>
 
 	#OBSERVAÇÃO IMPORTANTE: no Windows ou no GNU/Linux o Mozilla Firefox utiliza o seu próprio

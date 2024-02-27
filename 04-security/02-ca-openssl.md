@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 21/01/2024<br>
-#Versão: 0.06<br>
+#Data de atualização: 27/02/2024<br>
+#Versão: 0.07<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -95,7 +95,7 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 
 	#download do arquivo de configuração da CA do Ubuntu Server
 	#opção do comando wget: -v (verbose), -O (output file)
-	sudo wget -v -O /etc/ssl/conf/ca.conf 
+	sudo wget -v -O /etc/ssl/conf/ca.conf https://raw.githubusercontent.com/vaamonde/ocsinventory-ng/main/conf/ca.conf
 
 	#editando o arquivo de configuração da CA
 	sudo vim /etc/ssl/conf/ca.conf
@@ -205,3 +205,15 @@ através da emissão de documentos eletrônicos conhecidos como certificados dig
 	#verificando a criação do link PEM no Ubuntu Server
 	#opção do comando ls: -l (long listing), -h (human readable), -a (all)
 	ls -lha /etc/ssl/certs/pti-ca*
+
+#11_ Disponibilizando o certificado CRT (Certificate Request Trust) para download no Apache2 Server<br>
+
+	#criando o diretório de Download da CA no Apache2
+	#opção do comando mkdir: -v (verbose)
+	sudo mkdir -v /var/www/html/ca/
+
+	#copiando o arquivo CRT da CA para o diretório de CA Certificates
+	#opção do comando cp: -v (verbose)
+	#opção do comando ls: -l (long listing), -h (human-readable), -a (all)
+	sudo cp -v /etc/ssl/newcerts/pti-ca.crt /var/www/html/ca/
+	ls -lha /var/www/html/ca/

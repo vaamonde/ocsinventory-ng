@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 14/12/2023<br>
-#Data de atualização: 27/01/2024<br>
-#Versão: 0.02<br>
+#Data de atualização: 27/02/2024<br>
+#Versão: 0.03<br>
 
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
 Manual do OpenSSL: https://man.openbsd.org/openssl.1<br>
@@ -48,7 +48,7 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 
 	#download do arquivo de configuração do Certificado do Apache2 Server
 	#opção do comando wget: -v (verbose), -O (output file)
-	sudo wget -v -O /etc/ssl/conf/apache2.conf 
+	sudo wget -v -O /etc/ssl/conf/apache2.conf https://raw.githubusercontent.com/vaamonde/ocsinventory-ng/main/conf/apache2.conf
 
 #02_ Editando o arquivo de Arquivo de Configuração do Certificado do Apache2 Server<br>
 
@@ -160,7 +160,7 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 
 	#download do arquivo de configuração do HTTPS do Apache2 Server
 	#opção do comando wget: -v (verbose), -O (output file)
-	sudo wget -v -O /etc/apache2/sites-available/default-ssl.conf 
+	sudo wget -v -O /etc/apache2/sites-available/default-ssl.conf https://raw.githubusercontent.com/vaamonde/ocsinventory-ng/main/conf/default-ssl.conf
 
 #10_ Editando o arquivo de Configuração do HTTPS do Apache2 Server<br>
 
