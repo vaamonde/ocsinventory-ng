@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 20/02/2024<br>
-#Data de atualização: 20/02/2024<br>
-#Versão: 0.01<br>
+#Data de atualização: 27/02/2024<br>
+#Versão: 0.02<br>
 
 Release Notes Ubuntu Server 22.04.x: https://discourse.ubuntu.com/t/jammy-jellyfish-release-notes/24668<br>
 Ubuntu Advantage for Infrastructure: https://ubuntu.com/advantage<br>
@@ -23,7 +23,10 @@ Site Oficial do Ubuntu Membership: https://wiki.ubuntu.com/Membership
 
 #01_ Verificando as Informações do Sistema Operacional Ubuntu Server<br>
 
+	#verificando o conteúdo de aquivo de Identificação do Sistema Operacional
 	sudo cat /etc/os-release
+
+	#verificando o conteúdo do arquivo de Base Padrão do Linux
 	sudo cat /etc/lsb-release
 
 #02_ Atualizando o Sistema Operacional Ubuntu Server<br>

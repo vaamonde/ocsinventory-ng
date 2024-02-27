@@ -7,8 +7,8 @@
 #Instagram Procedimentos em TI: https://www.instagram.com/procedimentoem<br>
 #YouTUBE Bora Para Prática: https://www.youtube.com/boraparapratica<br>
 #Data de criação: 20/02/2024<br>
-#Data de atualização: 20/02/2024<br>
-#Versão: 0.01<br>
+#Data de atualização: 27/02/2024<br>
+#Versão: 0.02<br>
 
 Site Oficial do OpenSSH: https://www.openssh.com/<br>
 Site Oficial do OpenSSL: https://www.openssl.org/<br>
@@ -97,7 +97,7 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 
 		#alterar a linha 27: ListenAddress 172.16.1.xxx para: SEU_ENDEREÇO_IPV4_DO_UBUNTU
 		#OBSERVAÇÃO: ALTERAR O ENDEREÇO IPv4 CONFORME A SUA NECESSIDADE
-		ListenAddress 172.16.1.50
+		ListenAddress 172.16.1.30
 
 		#alterar a linha 77: AllowUsers
 		#OBSERVAÇÃO: ALTERAR O USUÁRIO DE ACESSO CONFORME A SUA NECESSIDADE
@@ -131,7 +131,7 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 		Pesquisa do Windows
 			Powershell
 
-	ssh vaamonde@172.16.1.50 (alterar para o endereço IPv4 do seu servidor)
+	ssh vaamonde@172.16.1.30 (alterar para o endereço IPv4 do seu servidor)
 
 	Windows
 		Pesquisa do Windows
@@ -139,14 +139,14 @@ em sessões de comunicações em uma rede de computadores usando o protocolo SSH
 
 	Category
 		Session
-			Host Name (or IP address): vaamonde@172.16.1.50 (alterar para o endereço IPv4 do seu servidor)
+			Host Name (or IP address): vaamonde@172.16.1.30 (alterar para o endereço IPv4 do seu servidor)
 			Port: 22
 			SSH: On
 	<Open>
 
 	Linux
 		Terminal: Ctrl + Alt + T
-			ssh vaamonde@172.16.1.50 (alterar o usuário e endereço IPv4 do seu servidor)
+			ssh vaamonde@172.16.1.30 (alterar o usuário e endereço IPv4 do seu servidor)
 	
 	#verificando os usuários logados remotamente no Ubuntu Server
 	#opção do comando who: -H (heading), -a (all)
