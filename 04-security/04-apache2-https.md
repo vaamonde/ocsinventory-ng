@@ -188,16 +188,16 @@ base o servidor web NCSA HTTPd criado por Rob McCool.
 #11_ Habilitando o suporte ao TLS/SSL no Site HTTPS do Apache2 Server no Ubuntu Server<br>
 
 	#habilitando os módulos do TLS/SSL e cabeçalhos do Apache2 Server
-	a2enmod ssl headers
+	sudo a2enmod ssl headers
 	
 	#habilitando o Site HTTPS Padrão do Apache2 Server
-	a2ensite default-ssl
+	sudo a2ensite default-ssl
 
 	#verificando as informações do arquivo do HTTPS do Apache2 Server
-	apache2ctl configtest
+	sudo apache2ctl configtest
 
 	#desabilitando o Site HTTP Padrão do Apache2 Server
-	a2dissite default
+	sudo a2dissite default
 
 	#reiniciando o Serviços do Apache2 Server
 	sudo systemctl restart apache2
