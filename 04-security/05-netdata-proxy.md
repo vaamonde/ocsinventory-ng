@@ -105,3 +105,7 @@ exibi-las em gráficos ao vivo e fáceis de interpretar.
 	#criando o usuário de autenticação do Netdata Server
 	#opção do comando htpasswd: -c (Create the passwdfile)
 	sudo htpasswd -c /etc/netdata/.htpasswd NOME_DO_USUÁRIO
+
+#08_ Testando o acesso via Proxy Autenticado do Netdata Server<br>
+
+#09_ Integrando o Netdata Agent Local no Netdata Cloud<br>
